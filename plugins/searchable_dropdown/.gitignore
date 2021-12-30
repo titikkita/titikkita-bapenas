@@ -1,0 +1,14 @@
+.DS_Store
+.dart_tool/
+
+.packages
+.pub/
+
+build/
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/libraries/Dart_SDK.xml
+vcs.xml
+workspace.xml
+Dart_SDK.xml
+Flutter_for_Android.xml

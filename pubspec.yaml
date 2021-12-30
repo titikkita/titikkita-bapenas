@@ -1,0 +1,64 @@
+name: titikkita
+description: A project by Bappenas.
+
+# publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.10.0 <3.0.0"
+
+dependencies:
+
+  flutter:
+    sdk: flutter
+  flutter_map_dragmarker:
+    path: ./plugins/flutter_map_dragmarker
+  searchable_dropdown:
+    path: ./plugins/searchable_dropdown
+
+  cupertino_icons: ^0.1.2
+  flutter_svg: ^0.19.1
+  http: ^0.13.0
+  flutter_spinkit: ^4.1.2
+  provider: ^4.3.3
+  flutter_map: ^0.11.0
+  geolocator: ^8.0.0
+  geocoder: ^0.2.1
+  map_controller: ^0.9.0
+  map: ^0.2.0+1
+  crypto: ^2.1.5
+  firebase_core: ^1.10.0
+  firebase_auth: ^3.3.0
+  proj4dart: ^1.0.5
+  email_validator: ^1.0.5
+  intl: any
+  datetime_picker_formfield: ^2.0.0
+  # cloud_firestore: ^1.0.0
+  image_picker: ^0.8.0
+  rflutter_alert: ^2.0.2
+  url_launcher: ^6.0.3
+  pin_code_fields: ^7.0.0
+  shared_preferences: ^2.0.0
+  flutter_map_tappable_polyline: ^1.3.0
+  flutter_icons: ^1.1.0
+  image: any
+  geodesy: ^0.3.2
+  flutter_compass: any
+  compasstools: ^0.1.0
+  location_permissions: ^3.0.0
+  multi_image_picker: ^4.8.0
+  flutter_absolute_path: ^1.0.6
+  image_downloader: ^0.30.0
+  percent_indicator: ^3.0.1
+  open_file: ^3.2.1
+  multi_select_flutter: ^4.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/map_icon/

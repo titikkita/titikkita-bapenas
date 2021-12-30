@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "845421490208",
+    "project_id": "titikkita-1e2e8",
+    "storage_bucket": "titikkita-1e2e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845421490208:android:9ee1018c1e528258d14c45",
+        "android_client_info": {
+          "package_name": "com.bappenas.titikkita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845421490208-ee9psgdh6s6biomonnj1ek38p0b1du8s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bappenas.titikkita",
+            "certificate_hash": "38ba960e36249203381a3a9138567224274acabc"
+          }
+        },
+        {
+          "client_id": "845421490208-uhuvst242rt11j5hn1kkiev8ml5gbad3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnxNqnS2T0OOMg0cvdGd_2KDS6Ql9LpuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845421490208-uhuvst242rt11j5hn1kkiev8ml5gbad3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
