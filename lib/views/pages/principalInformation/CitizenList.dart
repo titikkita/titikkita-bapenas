@@ -46,6 +46,8 @@ class _CitizenListViewState extends State<CitizenListView> {
   }
 
   void getDefaultData() async {
+    print("=====");
+    print(widget.data );
     setState(() {
       _isLoading = true;
     });
@@ -140,15 +142,16 @@ class _CitizenListViewState extends State<CitizenListView> {
           ]).then((value) {
             setState(() {
               foundData = value['data'];
+              displayData = value['data'];
             });
       });
     }else{
       setState(() {
         foundData = widget.data;
+        displayData = widget.data;
       });
     }
     setState(() {
-      displayData = widget.data;
       _isLoading = false;
     });
   }
@@ -410,7 +413,7 @@ class _CitizenListViewState extends State<CitizenListView> {
                     SizedBox(
                       height: 10,
                     ),
-                    !isFoundData
+                    !isFoundData && searchValue.length != 0
                         ? Center(
                             child: Text(
                               '$isNotFoundDataError',
@@ -450,6 +453,42 @@ class _CitizenListViewState extends State<CitizenListView> {
                               ),
                             ),
                           ),
+                    !isFoundData && searchValue.length == 0 ?
+                    SingleChildScrollView(
+                      child: Container(
+                        height: MediaQuery.of(context).size.height / 1.4,
+                        child: ListView.builder(
+                          controller: ScrollController(),
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            return ContainerBuilder
+                                .buildContainerPersonDetail(
+                              context: context,
+                              fullName: displayData[index]['Description'],
+                              gender: displayData[index]
+                              ['_JenisKelamin_code'],
+                              personalId: displayData[index]['Code'],
+                              placeOfBirth: displayData[index]
+                              ['TempatLahir'],
+                              action: () {
+                                goToPage(
+                                    context,
+                                    PersonDetailsView(
+                                      dataPerson: displayData[index],
+                                      memberIndex: index,
+                                      cardName: displayData[index]['_type'],
+                                      isPrincipal: true,
+                                      isFromSearch: true,
+                                    ));
+                              },
+                            );
+                          },
+                          itemCount: displayData.length,
+                        ),
+                      ),
+                    ) :
+                    Container(
+                    )
                   ],
                 ),
               ));

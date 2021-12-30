@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:titikkita/controller/cmdbuild_controller.dart';
 import 'package:titikkita/util/getFamilyOnPrincipal.dart';
 import 'package:titikkita/views/widgets/appBar.dart';
-import 'package:provider/provider.dart' as provider;
 import 'package:titikkita/views/widgets/const.dart';
 import 'package:titikkita/views/widgets/containerBuilder.dart';
 import 'package:titikkita/views/widgets/loadingIndicator.dart';
@@ -55,8 +54,6 @@ class _FamilyListViewState extends State<FamilyListView> {
       });
 
     }
-
-
     setState(() {
       total = familyList.length;
       _isLoading = false;
@@ -227,7 +224,7 @@ class _FamilyListViewState extends State<FamilyListView> {
                 SizedBox(
                   height: 10,
                 ),
-                !isFoundData
+                !isFoundData && searchValue.length != 0
                     ? Center(
                         child: Text(
                           '$isNotFoundDataError',
@@ -249,6 +246,22 @@ class _FamilyListViewState extends State<FamilyListView> {
                               : familyList.length,
                         ),
                       ),
+                !isFoundData && searchValue.length == 0 ?
+                Expanded(
+                  child: ListView.builder(
+                    itemBuilder: (context, index) {
+                      return ContainerBuilder.buildContainerListFamily(
+                        data: isShowFilterResult
+                            ? familyListFilter[index]
+                            : familyList[index],
+                        context: context,
+                      );
+                    },
+                    itemCount: isShowFilterResult
+                        ? familyListFilter.length
+                        : familyList.length,
+                  ),
+                ) : Container()
               ],
             ),
     );
